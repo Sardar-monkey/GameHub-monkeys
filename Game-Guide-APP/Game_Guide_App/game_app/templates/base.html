@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static './CSS/stylecss.css' %}">
+</head>
+
+<body>
+    {% block header %}
+    <header class="header">
+        <div class="container">
+            <button class="header_button" onclick="ShowMenu();">
+                <img src="{% static 'assets/icons/Games.svg' %}" alt="">
+            </button>
+        </div>
+    </header>
+    <audio id="get-out" src="{% static './sounds/getout.mp3' %}" preload="auto"></audio>
+    <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+        <div class="menu" onclick="event.stopPropagation()">
+            {% if user.is_authenticated %}
+            <div class="menu_header">
+                <img src="{% static './assets/icons/Icon.svg' %}" alt="">
+                <span class="menu_title">{{user.username}}</span>
+            </div>
+            {% else %}
+            <div class="menu_header">
+                <img src="{% static './assets/icons/Icon.svg' %}" alt="">
+                <span class="menu_title">No Username</span>
+            </div>
+            {% endif %}
+            <div class="menu_main">
+                <a href="{% url 'main' %}" class="">
+                    <button class="menu_button">
+                        Main
+                    </button>
+                </a>
+                <a href="{% url 'all_games' %}" class="">
+                    <button class="menu_button">
+                        All Games 
+                    </button>
+                </a>
+                <a href="{% url 'all_guides' %}" class="">
+                    <button class="menu_button">
+                        All Guides 
+                    </button>
+                </a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'my_guides' %}" class="">
+                   <button class="menu_button">
+                        My Guides
+                    </button>
+                </a>
+                {% else %}
+                <a href="{% url 'sorry' %}" class="">
+                   <button class="menu_button">
+                        My Guides
+                    </button>
+                </a>
+                {% endif %}
+                {% if not user.is_authenticated %}
+                <a href="{% url 'sign_up' %}" class="">
+                   <button class="menu_button">
+                        Sign Up
+                    </button>
+                </a>
+                <a href="{% url 'login_view' %}" class="">
+                   <button class="menu_button">
+                        Login
+                    </button>
+                </a>
+                {% else %}
+                <a href="{% url 'logout_action' %}" class="">
+                    <button class="menu_button" onclick="PlaySound();">
+                        Exit: {{user.email}}
+                    </button>
+                </a>
+                {% endif %} 
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    <script src="{% static './Js/script.js' %}"></script>
+</body>
+</html>         

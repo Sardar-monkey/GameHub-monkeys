@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}All Games{% endblock %}
+
+{% block content %}
+    <section class="sorry_block">
+        <div class="sorry_yellow">
+            <div class="green_back">
+                <h1>To access this catalog you need to be signed up or logged in, sorry :/</h1>
+            </div>
+            <div class="btns">
+                <a href="{% url 'sign_up' %}">
+                    <button>Sign Up</button>
+                </a>
+                <a href="{% url 'login_view' %}">
+                    <button>Login</button>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

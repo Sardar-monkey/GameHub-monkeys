@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}All Games{% endblock %}
+
+
+{% block content %}
+<form id="deleteform" method="post" action="">
+    {% csrf_token %}
+    <div id="overlay2" style="display: none;" onclick="ShowDelete();">
+        <div  class="yousure" onclick="event.stopPropagation()">
+            <span class="delete_title">Are you sure about that?</span>
+            <div class="delete_buttons">
+                <button type="submit" class="btn is-green">
+                    Yes
+                </button>
+                
+                <button type="button" class="btn is-red" onclick="ShowDelete();">
+                    No
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<section class="mobile_block">
+    <div class="second_header">
+        <span class="txt">My Guides</span>
+    </div>
+   
+    <div class="container">
+        <div class="create_block">
+            <a href="{% url 'create' %}">
+                <div class="creation">
+                    <div><img src="{% static './assets/icons/Editors.svg' %}" alt=""></div>
+                    <span class="create">Create</span>
+                </div>
+            </a>
+
+            {% for guide in guides%}
+                <a href="{% url 'guide_desc' pk=guide.pk %}">
+                    <div class="basebal">
+                        <div class="create_head">
+                            <span class="title">{{guide.title}}</span> 
+                            <div class="images" onclick="event.preventDefault();">
+                                <button class="edit_trash_btn" onclick="ShowDelete('{{guide.pk}}');"><img src="{% static './assets/icons/Delete.svg' %}" alt="delete_button"></button>
+                            </div>      
+                            </div>
+                        <div class="create_main">
+                            <img src={{guide.image.url}} alt="card_image" class="card_image">
+                            <span class="card_txt">Creator : {{guide.author.username}}</span>
+                            <span class="card_txt">Category : {{guide.category}}</span>
+                            <span class="card_txt">Date : {{guide.date|date:"d.m.Y"}}</span>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

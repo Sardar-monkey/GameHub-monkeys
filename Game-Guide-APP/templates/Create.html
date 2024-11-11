@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание</title>
+    <link rel="stylesheet" href="./CSS/stylecss.css">
+</head>
+
+<body>
+        <header class="header">
+            <div class="container">
+                <button class="header_button" onclick="ShowMenu();">
+                    <img src="./assets/icons/Games.svg" alt="">
+                </button>
+            </div>
+        </header>
+
+        <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+            <div class="menu" onclick="event.stopPropagation()">
+                <div class="menu_header">
+                    <img src="./assets/icons/Icon.svg" alt="">
+                    <span class="menu_title">Sardar monkey</span>
+                </div>
+                <div class="menu_main">
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            Main
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            All Games 
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            All Guides 
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            My Guides
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            Exit: <span>Sardarhomatv@gmail.com</span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+    </div>
+
+
+    <main>
+        <section class="mobile_block">
+            <div class="second_header">
+                <span class="txt">Create</span>
+            </div>
+           
+            <div class="container">
+                <div class="create_block is-light_yellow">
+                    <input type="text" class="create_input" placeholder="Title">
+                    
+                    <div class="category">
+                        <div class="create_category" id="create_category" onclick="ShowSidebar()">
+                            <span>Category</span>
+                            <img src="./assets/icons/arrow.svg" alt="arrow">
+                        </div>
+                        <div class="sidebar" id="sidebar" style="display: none;">
+                            <ul>
+                              <li>Minecraft</li>
+                              <div class="line2"></div>
+                              <li>Doom</li>
+                              <div class="line2"></div>
+                              <li>Terraria</li>
+                              <div class="line2"></div>
+                              <li>Stardew Walley</li>
+                              <div class="line2"></div>
+                            </ul>
+                          </div>
+                    </div>
+                    
+                    <div class="create_upload">
+                        <img src="./assets/icons/plus.svg" alt="plus">
+                        Upload image
+                    </div>
+
+                    <textarea type="text" class="create_description" rows="4" placeholder="Description..."></textarea>
+
+                    <div class="submit_block">
+                        <input type="submit" class="submit_btn" value="submit">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./Js/script.js"></script>
+</body>
+</html>         

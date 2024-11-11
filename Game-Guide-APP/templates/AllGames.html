@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все игры</title>
+    <link rel="stylesheet" href="./CSS/stylecss.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <button class="header_button" onclick="ShowMenu();">
+                <img src="./assets/icons/Games.svg" alt="">
+            </button>
+        </div>
+    </header>
+
+    <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+            <div class="menu" onclick="event.stopPropagation()">
+                <div class="menu_header">
+                    <img src="./assets/icons/Icon.svg" alt="">
+                    <span class="menu_title">Sardar monkey</span>
+                </div>
+                <div class="menu_main">
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            Main
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            All Games 
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            All Guides 
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            My Guides
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            Exit: <span>Sardarhomatv@gmail.com</span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+    </div>
+
+    <main>
+        <section class="mobile_block">
+            <div class="second_header">
+                <span class="txt">All Games</span>
+            </div>
+           
+            <div class="container">
+                <div class="category_list">
+                    <div class="category_item">
+                        <img src="./assets/icons/minecraft.jpg" alt="minecraft" class="game_image">
+                    </div>
+                    <div class="category_item">
+                        <img src="./assets/icons/doom.jpg" alt="doom" class="game_image">
+                    </div>
+                    <div class="category_item">
+                        <img src="./assets/icons/terraria.avif" alt="terraria" class="game_image">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <script src="./Js/script.js"></script>
+</body>
+</html>         

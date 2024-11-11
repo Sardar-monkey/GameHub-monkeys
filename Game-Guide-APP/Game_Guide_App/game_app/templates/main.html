@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="mobile_block">
+    <div class="second_header">
+        <span class="txt">Home</span>
+    </div>
+
+    <div class="logo">
+        <span class="logo_txt">GAME</span>
+        <span class="logo_txt is-green_txt">HUB</span>
+    </div>
+    <div class="forflex">
+        <div class="line"></div>
+    </div>
+
+    {% for guide in guides%}
+    <div class="container">
+        <div class="defined_game_list">
+            <a href="{% url 'guide_desc' pk=guide.pk %}">
+                <div class="basebal">
+                    <div class="create_head">
+                        <span class="title">{{guide.title}}</span>      
+                    </div>
+                    <div class="create_main">
+                        <img src={{guide.image.url}} alt="card_image" class="card_image">
+                        <span class="card_txt">Creator :  {{guide.author.username}}</span>
+                        <span class="card_txt">Category : {{guide.category}}</span>
+                        <span class="card_txt">Date : {{guide.date|date:"d.m.Y"}}</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+    
+</section>
+{% endblock %}

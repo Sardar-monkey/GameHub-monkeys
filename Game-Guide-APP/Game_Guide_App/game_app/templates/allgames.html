@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}All Games{% endblock %}
+
+{% block content %}
+    <section class="mobile_block">
+        <div class="second_header">
+            <span class="txt">All Games</span>
+        </div>
+        <div class="container">
+            <div class="category_list">
+                {% for category in categories %}
+                    <a href="{% url 'guides_by_cat' slug=category.slug %}">
+                        <div class="category_item">
+                            <img src="{{category.gameimage.url}}" alt="{{category.title}}" class="game_image">
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

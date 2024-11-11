@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Create{% endblock %}
+
+
+{% block header %}
+<header class="header">
+    <div class="container">
+        <a href="{% url 'my_guides' %}">
+            <button class="header_button" onclick="ShowMenu();">
+                <img src="{% static 'assets/icons/BackIcon.svg' %}" alt="Back Icon">
+            </button>
+        </a>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<section class="mobile_block">
+    <div class="second_header">
+        <span class="txt">Create</span>
+    </div>
+
+    <form action="{% url 'create' %}" class="form-create" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="container">
+            <div class="create_block is-light_yellow">
+                {{form.title}}
+                {{form.category}}
+                <label for="id_image" class="create_upload" style="display: flex;">
+                    <img src="{% static './assets/icons/plus.svg' %}" alt="plus">
+                    Upload image
+                    {{form.image}}  
+                </label>
+                {{form.description}}
+                <div class="submit_block">
+                    <button type="submit" class="submit_btn">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Описание</title>
+    <link rel="stylesheet" href="./CSS/stylecss.css">
+</head>
+
+<body>
+    <header class="header">
+            <div class="container">
+                <button class="header_button" onclick="ShowMenu();">
+                    <img src="./assets/icons/Games.svg" alt="">
+                </button>
+            </div>
+    </header>
+
+    <div id="overlay" style="display: none;"  onclick="ShowMenu()">
+            <div class="menu" onclick="event.stopPropagation()">
+                <div class="menu_header">
+                    <img src="./assets/icons/Icon.svg" alt="">
+                    <span class="menu_title">Sardar monkey</span>
+                </div>
+                <div class="menu_main">
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            Main
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            All Games 
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            All Guides 
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            My Guides
+                        </a>
+                    </button>
+                    <button class="menu_button">
+                        <a href="#" class="">
+                            Exit: <span>Sardarhomatv@gmail.com</span>
+                        </a>
+                    </button>
+                </div>
+            </div>
+    </div>
+
+    <main>
+        <section class="mobile_block">
+            <div class="second_header">
+                <span class="txt">Description</span>
+            </div>
+           
+            <div class="container">
+                <div class="create_block is-light_yellow">
+                    <div class="description_box">
+                        <h1 class="desc_title">Minecraft crafting recepies</h1>
+                        <span class="desc_date">DATE : 28.10.2024</span>
+                        <img src="./assets/icons/terraria.avif" alt="minecraft" class="desc_image">
+                        <p class="description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nesciunt quis recusandae repellendus, omnis ullam alias facere iusto rem magni, quibusdam harum quod doloribus ab sapiente iure earum perferendis voluptas.</p>
+                    </div>
+                </div>
+                <div class="create_block is-light_yellow">
+                    <div class="description_box">
+                        <div class="author">Author : <span>Sardar</span></div>
+                        <div class="game_category">Category : <span>Terraria</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./Js/script.js"></script>
+</body>
+</html>         

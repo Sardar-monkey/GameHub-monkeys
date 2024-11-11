@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Description{% endblock %}
+
+
+{% block header %}
+<header class="header">
+    <div class="container">
+        <a href="{% url 'all_games' %}">
+            <button class="header_button" onclick="ShowMenu();">
+                <img src="{% static 'assets/icons/BackIcon.svg' %}" alt="Back Icon">
+            </button>
+        </a>
+    </div>
+</header>
+{% endblock %}
+
+
+{% block content %}
+<section class="mobile_block">
+    <div class="second_header">
+        <span class="txt">Description</span>
+    </div>
+
+    <div class="container">
+        <div class="create_block is-light_yellow">
+            <div class="description_box">
+                <h1 class="desc_title">{{guide_description.title}}</h1>
+                <strong><span class="desc_date">DATE : {{guide_description.date|date:"d.m.Y"}}</span></strong>
+                <img src={{guide_description.image.url}} alt="desc_image" class="desc_image">
+                <p class="description">{{guide_description.description|linebreaksbr}}</p>
+            </div>
+        </div>
+        <div class="create_block is-light_yellow">
+            <div class="description_box">
+                <div class="author">Author : {{guide_description.author.username}}</div>
+                <div class="game_category">Category : {{guide_description.category}}</div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+{% endblock %}
